@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Dijkstras Algorithm: Exercise</title>
+<link rel="stylesheet" href="../../assets/css/common-styles.css">
+    
+  </head>
+  <body>
+    <div class="instruction-box">
+      <button class="collapsible">Instructions</button>
+      <div class="content">
+        <ul>
+          <li>Input A in the text box and click on submit to select a start node and start practicing.</li>
+          <li>Input value of the next node to be traversed according to Dijkstra's Algorithm.</li>
+          <li>CLick on the submit button.</li>
+          <li>Keep an eye on the box below for feedback and change your response accordingly</li>
+        </ul>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="static/libs/dijkstra.js"></script>
+    <script type="text/javascript" src="static/libs/graph.js"></script>
+    <script type="text/javascript" src="static/libs/heap.js"></script>
+    <center><canvas id="dijkstra" width="500" height="400"></canvas></center>
+    <script type="text/javascript" src="js/dijkstras_practice.js"></script>
+<link rel="stylesheet" href="../../assets/css/common-styles.css">
+    
+    <div class="legend-comment-wrapper" style="padding-top:2%;height:26vh;">
+       <ul class="legend" style="float:left;">
+         <li><span class="grey"></span> Unvisited Nodes</li>
+         <li><span class="blue"></span> Visited Nodes</li>
+         <li><span class="black"></span> Edge traversal options</li>
+         <li><span class="blue"></span> traversed edge</li>
+       </ul>
+       
+       <div class="comment-box" style="margin:auto;">
+         <b>Observations</b><br>
+         <p id='msg'>Press Start then enter the next node name</p>
+       </div>
+       
+    </div>
+    <div id="buttondiv" style="text-align:center;">
+      <input class="text-box" type="text" id="input" value="" autofocus placeholder="Enter value of next node" maxlength="1" style="text-transform:uppercase" onkeyup="lettersonly(this)">
+      <button id='sta' onclick="dijkstra.start(); disable()" type="button" class="button-input" >Start</button>
+      <button type="button" class="button-input" id="submit" onclick=subButton(); onmouseup="return empty()" >Submit</button>
+      <button type="button" class="button-input" onclick="reset()">Reset</button>
+    </div>
+    
+  </body>
+</html>
