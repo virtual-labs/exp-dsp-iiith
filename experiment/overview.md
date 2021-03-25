@@ -1,6 +1,4 @@
-### Estimated Time
 
-1 hour
 
 ## Motivation
 Everyone wants to reach the destination as fast as possible – Anonymous

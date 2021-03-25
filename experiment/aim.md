@@ -1,3 +1,7 @@
+### Estimated Time
+
+1 hour
+
 ### Learning Objectives of the Experiment
 
 In this experiment on Dijkstra's Shortest Path algorithm, you will learn following:
