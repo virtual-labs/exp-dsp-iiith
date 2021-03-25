@@ -1,3 +1,7 @@
+### Estimated Time
+
+30 minutes
+
 ### Learning Objectives of this Module:
 
 In this module, we will learn about:
