@@ -45,7 +45,7 @@
         },
         {
           "unit-type": "task",
-          "label": "Dijkstra's Algorithm",
+          "label": "Algorithm",
           "content-type": "video",
           "source": "dijkstra-algorithm.md",
           "target": "dijkstra-algorithm.html"
