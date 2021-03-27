@@ -10,11 +10,11 @@ You can explore more about Dijkstra’s shortest path algorithm Experiment throu
 
 **Other resources**
 
-   - [Mathematical Programming by Kenji Ikeda](https://ds2-iiith.vlabs.ac.in/exp/dijkstra-algorithm/weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/main/index.shtml)
+   <!--- [Mathematical Programming by Kenji Ikeda](https://ds2-iiith.vlabs.ac.in/exp/dijkstra-algorithm/weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/main/index.shtml)-->
    - [Geeks for Geeks](https://www.geeksforgeeks.org/)
    - [HackerRank](https://www.hackerrank.com/topics)
    - [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
 
-Credits:
+**Credits:**
 
 [Kenji Ikeda 2015](http://weierstrass.is.tokushima-u.ac.jp/ikeda/suuri/dijkstra/Dijkstra.shtml) Thanks for giving us permission to use your js codes according to General Public Licence (GPL).

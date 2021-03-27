@@ -35,30 +35,24 @@
         {
           "unit-type": "aim"
         },
-        {
-          "unit-type": "task",
-          "label": "Overview",
-          "content-type": "video",
-          "source": "overview.md",
-          "target": "overview.html"
-        },
+        
 	{
           "unit-type": "task",
-          "label": "Basic Concept",
+          "label": " Concept",
           "content-type": "video",
           "source": "basic-concept.md",
           "target": "basic-concept.html"
         },
         {
           "unit-type": "task",
-          "label": "Dijkstra's Algorithm",
+          "label": "Algorithm",
           "content-type": "video",
           "source": "dijkstra-algorithm.md",
           "target": "dijkstra-algorithm.html"
         },
         {
           "unit-type": "task",
-          "label": "Dijkstra’s Algorithm Demo",
+          "label": " Demo",
           "content-type": "simulation",
           "source": "simulation/DijkstrasDemo.html",
           "target": "DijkstrasDemo.html"
@@ -66,7 +60,7 @@
 	
         {
           "unit-type": "task",
-          "label": "Dijkstra’s Algorithm Practice",
+          "label": " Practice",
           "content-type": "simulation",
           "source": "simulation/DijkstrasPractice.html",
           "target": "DijkstrasPractice.html"
@@ -74,7 +68,7 @@
 	
 	{
           "unit-type": "task",
-          "label": "Dijkstra’s Algorithm Exercise",
+          "label": " Exercise",
           "content-type": "simulation",
           "source": "simulation/DijkstrasExercise.html",
           "target": "DijkstrasExercise.html"
@@ -82,7 +76,7 @@
         
 	{
          "unit-type": "task",
-         "label": "Dijkstra's Algorithm Quiz",
+         "label": " Quiz",
          "content-type": "assesment",
          "source": "dijkstras-algorithm-quiz.js",
          "target": "dijkstras-algorithm-quiz.html"
@@ -122,7 +116,7 @@
         },
         {
           "unit-type": "task",
-          "label": "Analysis Quiz",
+          "label": "  Quiz",
           "content-type": "assesment",
           "source": "analysis-quiz.js",
           "target": "analysis-quiz.html"
