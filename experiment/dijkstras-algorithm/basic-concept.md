@@ -1,3 +1,6 @@
+### Dijkstra’s Algorithm overview
+<iframe src="https://www.youtube.com/embed/_wOeahXmiSY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ### The Problem
 
 - In many applications one wants to obtain the shortest path from a to b.
