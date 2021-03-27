@@ -26,14 +26,4 @@ Queues support the following fundamental functions:
 ### Time and Space Complexity
 Time complexity of an algorithm gives the measure of time taken by it to run as a function of the length of the input. Similarly, Space complexity of an algorithm quantifies the amount of space or memory taken by an algorithm to run as a function of the length of the input. 
 
-### Estimated Time for Pre Test Quiz
-
-20 minutes
-
-### Instructions for Pre Test Quiz 
-
-  - Pretest includes questions on graphs, queues, priority queues and time and space complexity.
-  - If you want to revise these topics before taking the quiz, go through the recap module first.
-  - Read the questions in the quiz section and select the correct option from the ones provided. Please note that some questions may have more than one correct response.
-
 
