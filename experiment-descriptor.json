@@ -21,13 +21,6 @@
       "target": "recap.html"
     },
     {
-      "unit-type": "task",
-      "label": "Pre Test Quiz",
-      "content-type": "assesment",
-      "source": "pretest.js",
-      "target": "pretest.html"
-    },
-    {
       "unit-type": "lu",
       "label": "Dijkstra’s Algorithm",
       "basedir": "dijkstras-algorithm",
@@ -72,15 +65,7 @@
           "content-type": "simulation",
           "source": "simulation/DijkstrasExercise.html",
           "target": "DijkstrasExercise.html"
-        },
-        
-	{
-         "unit-type": "task",
-         "label": " Quiz",
-         "content-type": "assesment",
-         "source": "dijkstras-algorithm-quiz.js",
-         "target": "dijkstras-algorithm-quiz.html"
-       }
+        }
       
       ]
     },
@@ -113,25 +98,10 @@
           "content-type": "video",
           "source": "comparison-with-other-algorithms.md",
           "target": "comparison-with-other-algorithms.html"
-        },
-        {
-          "unit-type": "task",
-          "label": "  Quiz",
-          "content-type": "assesment",
-          "source": "analysis-quiz.js",
-          "target": "analysis-quiz.html"
         }
       ]
     },
-    
-    {
-      "unit-type": "task",
-      "label": "Post Test Quiz",
-      "content-type": "assesment",
-      "source": "posttest.js",
-      "target": "posttest.html"
-    },
-       
+        
     {
       "unit-type": "task",
       "label": "Further Readings/References",
