@@ -1,1 +1,50 @@
-[{"question":"1. Which of the following statements is/are TRUE for an undirected graph?<br>P: Number of odd degree vertices is even<br>Q: Sum of degrees of all vertices is even?","answers":{"a":"P Only","b":"Q Only ","c":"Both P and Q ","d":"Neither P nor Q"},"correctAnswer":"c"},{"question":"2. Which of the following data structure is useful in traversing a given graph by breadth first search?","answers":{"a":"Stack","b":"List ","c":"Queue ","d":"None of these"},"correctAnswer":"c"},{"question":"3. What does it mean when we say that an algorithm X is asymptotically more efficient than Y?","answers":{"a":"X will always be a better choice for small inputs","b":"X will always be a better choice for large inputs ","c":"Y will always be a better choice for small inputs ","d":"X will always be a better choice for all inputs "},"correctAnswer":"b"},{"question":"4. What is the time and space complexity for the given code? int a = 0, b = 0; <br>for (i = 0; i< N; i++) {<br>  a = a + rand(); }<br>for (j = 0; j< M; j++) {<br>  b = b + rand(); <br>}","answers":{"a":"O(N * M) time, O(1) space ","b":"O(N + M) time, O(N + M) space ","c":" O(N + M) time, O(1) space ","d":"O(N * M) time, O(N + M) space "},"correctAnswer":"c"},{"question":"5. For a given graph G having v vertices and e edges which is connected and has no cycles, which of the following statements is true?","answers":{"a":"v=e ","b":"v = e+1  ","c":"  v + 1 = e  ","d":"v = e-1  "},"correctAnswer":"b"}]
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. Which data structure is best suitable for performing breadth first search?",
+            "answers": {
+                "a": "Stack",
+                "b": "Queue",
+                "c": "Array",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "b": "In breadth first search we do backtracking, and go along the breadth of the tree while searching. Initially we enqueue all adjacent nodes of the root node. Nex we dequeue a node from the queue and again enqueue all of it\u2019s adjacent nodes. As we are using a queue, the next node would be an adjacent node to the initial root node as the queue is First in First Out."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. Which data structure is best suitable for performing Depth first search?",
+            "answers": {
+                "a": "Stack",
+                "b": "Queue",
+                "c": "Array",
+                "d": "None of the above"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "b": "In depth first search, we go in the order of last in first out. Find a node, display it, push it to stack and go to the first adjacent node. Once we reach an end. We pop from stack and check to see if there is any additional adjacent node available. Hence stack is used."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. Given a tree of nodes. We know that the element we want to search is closer to the root node than farther. Which would be the best method to search for it.",
+            "answers": {
+                "a": "Binary Search",
+                "b": "Breadth First Search",
+                "c": "Depth First Search",
+                "d": "All are equally good"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Although binary search is one of the better searching algorithms, we are not sure if the tree given to us follows the requirements of binary search (i.e. tree is balanced), hence we cannot for certain conclude.",
+                "b": "Breadth first search is the best search to find the node that is closer to node, as we go searching level by level.",
+                "c": "In Depth first search we go to the last available level of every node, and then search for neighbours. Let us assume we have a tree of 7 levels. And the element we want to find is the 7th element of the first level. Imagine traversing 7 levels 7 times before finding. Hence it is not the best way.",
+                "d": "All are not equally good."
+            },
+            "difficulty": "beginner"
+        }
+    ]
+}
