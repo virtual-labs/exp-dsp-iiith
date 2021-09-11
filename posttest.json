@@ -1,0 +1,55 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. What is the time complexity of Dijikstra\u2019s algorithm? (V is the number of vertices in the graph)",
+            "answers": {
+                "a": "O(V)",
+                "b": "O(V^2)",
+                "c": "O(log V)",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {},
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. Which of the following data structure can help decrease the time complexity of Dijikstra\u2019s algorithm?",
+            "answers": {
+                "a": "Stack",
+                "b": "Queue",
+                "c": "Heap",
+                "d": "Min Priority Queue"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "d": "Due to the way the min priority queue is defined, functions like getMinimumValue() and decreaseKey() help us reduce the time complexity of the algorithm to O ( V + E l o g V ) from O(V^2)."
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "3. Dijkstra\u2019s Algorithm can also be used on graphs with negative weights.",
+            "answers": {
+                "a": "True",
+                "b": "False"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "b\" In Dijkstra, having negative weights makes calculations very complex and hence this algorithm cannot be used on graphs with negative weights.<br>Note": "Both FloydWarshall and BellmanFord support graphs with negative values"
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "4. Dijkstra\u2019s Algorithm is used to find:",
+            "answers": {
+                "a": "Cycles in graph",
+                "b": "Single source shortest path",
+                "c": "Network flow",
+                "d": "Sorted order of nodes"
+            },
+            "correctAnswer": "b",
+            "explanations": {},
+            "difficulty": "beginner"
+        }
+    ]
+}
