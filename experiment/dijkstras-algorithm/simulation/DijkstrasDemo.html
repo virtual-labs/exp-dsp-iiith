@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
     <title>Dijkstras Algorithm: Demonstration</title>
 <link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
-    
+<link rel="stylesheet" href="css/dijk.css">
+
   </head>
   <body>
     <div class="instruction-box">
@@ -29,10 +30,15 @@
     
     <div class="legend-comment-wrapper" style="padding-top:2%;height:22vh;">
        <ul class="legend" style="float:left;">
-         <li><span class="grey"></span> Unvisited Nodes</li>
-         <li><span class="blue"></span> Visited Nodes</li>
-         <li><span class="black"></span> Edge traversal options</li>
-         <li><span class="blue"></span> Traversed edge</li>
+        <table>
+          <tr><td>Legend:</td></tr>
+          <tr class="SubLegend"><td><b>Node</b></td></tr>
+          <tr><td><span class="grey"></span>&ensp;Unvisited</td></tr>
+          <tr><td><span class="blue"></span>&ensp;Visited</td></tr>
+          <tr class="SubLegend"><td><b>Edge</b></td></tr>
+          <tr><td><span class="black"></span>&ensp;Traversal options</td></tr>
+          <tr><td><span class="blue"></span>&ensp;Traversed</td></tr>
+        </table>
        </ul>
        
        <div class="comment-box" style="margin:auto;">
