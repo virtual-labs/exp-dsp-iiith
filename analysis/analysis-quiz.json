@@ -1,0 +1,43 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. What is the time complexity of insertion at any point on an array?",
+            "answers": {
+                "a": "O(N)",
+                "b": "O(N^2)",
+                "c": "O(NLogN)",
+                "d": "None of these"
+            },
+            "correctAnswer": "a",
+            "explanations": {},
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. What is the space complexity of Dijikstra\u2019s algorithm? (V is the number of vertices in the graph)",
+            "answers": {
+                "a": "O(V)",
+                "b": "O(V^2)",
+                "c": "O(log V)",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {},
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. What is the order of time complexities of BellmanFord(B), Dijkstra's(D) and Floyd Warshall(F) Algorithms.",
+            "answers": {
+                "a": "D > B > F",
+                "b": "B > D > F",
+                "c": "D > F > B",
+                "d": "F > B > D"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "d": "The time complexity of Floyd Warshall is O(V^3), Bellman Ford is O(EV), Dijkstra is O(V^2)."
+            },
+            "difficulty": "intermediate"
+        }
+    ]
+}

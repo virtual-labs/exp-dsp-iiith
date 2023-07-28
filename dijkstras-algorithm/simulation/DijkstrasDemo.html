@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Dijkstras Algorithm: Demonstration</title>
+<link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
+<link rel="stylesheet" href="css/dijk.css">
+
+  </head>
+  <body>
+    <div class="instruction-box">
+      <button class="collapsible">Instructions</button>
+      <div class="content">
+        <ul>
+          <li> Click on the <b>Next</b> button below to find the shortest path from A to the node.
+          <li> The traversal will be done according to Dijkstra's Algorithm
+          <li> Click on the <b>Reset</b> button to start again.
+        </ul>
+      </div>
+    </div>
+     
+    <script type="text/javascript" src="static/libs/dijkstra.js"></script>
+    <script type="text/javascript" src="static/libs/graph.js"></script>
+    <script type="text/javascript" src="static/libs/heap.js"></script>
+    <center><canvas id="dijkstra" width="500" height="400"></canvas></center>
+    <script type="text/javascript" src="js/dijkstras_demo.js"></script>
+<script src="../../assets/js/instruction-box.js"></script>
+
+    
+    <div class="legend-comment-wrapper" style="padding-top:2%;height:22vh;">
+       <ul class="legend" style="float:left;">
+        <table>
+          <tr><td>Legend:</td></tr>
+          <tr class="SubLegend"><td><b>Node</b></td></tr>
+          <tr><td><span class="grey"></span>&ensp;Unvisited</td></tr>
+          <tr><td><span class="blue"></span>&ensp;Visited</td></tr>
+          <tr class="SubLegend"><td><b>Edge</b></td></tr>
+          <tr><td><span class="black"></span>&ensp;Traversal options</td></tr>
+          <tr><td><span class="blue"></span>&ensp;Traversed</td></tr>
+        </table>
+       </ul>
+       
+       <div class="comment-box" style="margin:auto;">
+        <b>Observations</b><br>
+       			<p id="ins"> Click on Start button</p>
+       </div>
+    </div>
+    <div class="slidecontainer" style="text-align:center;">
+      <p>
+        Min. Speed
+        <input id="slider" type="range" min="1000" max="4000" step="500">
+        Max. Speed
+      </p>
+    </div>
+    
+    <div id="buttondiv" style="text-align:center;padding-top:2%;">
+      <button id='start' type="button" class="button-input" onclick=first_click() onmouseup="next_click()">Start</button>
+      <button type="button" class="button-input" onclick="reset()">Reset</button>
+      <button type="button" class="button-input" onclick="auto()">Play</button>  
+    </div>
+    
+  <script src="../../assets/js/iframeResize.js"></script></body>
+</html>
+</body>
