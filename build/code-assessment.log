@@ -1,0 +1,13 @@
+{
+  _: [],
+  f: [
+    '/Users/joey/Documents/VirtualLabs/Data-Structures-2/exp-dsp-iiith/experiment/code-assessment.json'
+  ],
+  files: [
+    '/Users/joey/Documents/VirtualLabs/Data-Structures-2/exp-dsp-iiith/experiment/code-assessment.json'
+  ],
+  '$0': 'validate'
+}
+Json Error: must have required property 'version'
+Failed while validating /Users/joey/Documents/VirtualLabs/Data-Structures-2/exp-dsp-iiith/experiment/code-assessment.json
+Error: Schema is Invalid

@@ -2,6 +2,13 @@
   "unit-type": "lu",
   "label": "Dijkstra's Algorithm",
   "basedir": ".",
+  "code-assessment": {
+    "include": true,
+    "languages": [
+      "javascript"
+    ],
+    "position": 5
+  },
   "units": [
     {
       "unit-type": "aim"
@@ -35,8 +42,7 @@
         {
           "unit-type": "aim"
         },
-        
-	{
+        {
           "unit-type": "task",
           "label": " Concept",
           "content-type": "video",
@@ -57,7 +63,6 @@
           "source": "simulation/DijkstrasDemo.html",
           "target": "DijkstrasDemo.html"
         },
-	
         {
           "unit-type": "task",
           "label": " Practice",
@@ -65,27 +70,23 @@
           "source": "simulation/DijkstrasPractice.html",
           "target": "DijkstrasPractice.html"
         },
-	
-	{
+        {
           "unit-type": "task",
           "label": " Exercise",
           "content-type": "simulation",
           "source": "simulation/DijkstrasExercise.html",
           "target": "DijkstrasExercise.html"
         },
-        
-	{
-         "unit-type": "task",
-         "label": " Quiz",
-         "content-type": "assesment",
-         "source": "dijkstras-algorithm-quiz.json",
-         "target": "dijkstras-algorithm-quiz.html"
-       }
-      
+        {
+          "unit-type": "task",
+          "label": " Quiz",
+          "content-type": "assesment",
+          "source": "dijkstras-algorithm-quiz.json",
+          "target": "dijkstras-algorithm-quiz.html"
+        }
       ]
     },
-   
-        {
+    {
       "unit-type": "lu",
       "label": "Analysis",
       "basedir": "analysis",
@@ -93,7 +94,7 @@
         {
           "unit-type": "aim"
         },
-	{
+        {
           "unit-type": "task",
           "label": "Overview",
           "content-type": "video",
@@ -123,7 +124,6 @@
         }
       ]
     },
-    
     {
       "unit-type": "task",
       "label": "Posttest",
@@ -131,7 +131,6 @@
       "source": "posttest.json",
       "target": "posttest.html"
     },
-       
     {
       "unit-type": "task",
       "label": "Further Readings/References",
