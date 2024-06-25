@@ -1,0 +1,32 @@
+{
+    "experiment name": "Dijkstra's Algorithm",
+    "problems": [
+        {
+            "problem name": "Problem 1",
+            "description": "Implement Dijkstra's algorithm to find the shortest paths from a given source vertex to all other vertices in the undirected graph.",
+            "inputs": [
+                ["A", "B", "C", "D", "E"],
+                [
+                    ["A", "B", 4],
+                    ["A", "C", 2],
+                    ["B", "C", 1],
+                    ["B", "D", 5],
+                    ["C", "D", 3],
+                    ["C", "E", 6],
+                    ["D", "E", 2]
+                ],
+                "A"
+                
+            ],
+            "expected": {
+                "A": 0,
+                "B": 3,
+                "C": 2,
+                "D": 5,
+                "E": 7
+            },
+            "inputs description": "Input consists of a connected graph represented by its vertices - inp1 and weighted undirected edges - inp2, along with a source vertex - inp3.",
+            "expected description": "An object where each key is a vertex and its value is the shortest distance from the source vertex. Distances are shown as integers."
+        }
+    ]
+}
