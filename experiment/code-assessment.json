@@ -2,31 +2,42 @@
     "experiment name": "Dijkstra's Algorithm",
     "problems": [
         {
-            "problem name": "Problem 1",
-            "description": "Implement Dijkstra's algorithm to find the shortest paths from a given source vertex to all other vertices in the undirected graph.",
+            "problem name": "City Navigation System",
+            "description": "Implement Dijkstra's algorithm to find the shortest paths in a city map. The roads are represented as unweighted edges, and the goal is to find the shortest distance from the starting location to all other locations.",
             "inputs": [
-                ["A", "B", "C", "D", "E"],
+                ["Home", "School", "Park", "Mall", "Library"],
                 [
-                    ["A", "B", 4],
-                    ["A", "C", 2],
-                    ["B", "C", 1],
-                    ["B", "D", 5],
-                    ["C", "D", 3],
-                    ["C", "E", 6],
-                    ["D", "E", 2]
+                    ["Home", "School", 4],
+                    ["Home", "Park", 2],
+                    ["School", "Park", 1],
+                    ["School", "Mall", 5],
+                    ["Park", "Mall", 3],
+                    ["Park", "Library", 6],
+                    ["Mall", "Library", 2]
                 ],
-                "A"
-                
+                "Home"
             ],
-            "expected": {
-                "A": 0,
-                "B": 3,
-                "C": 2,
-                "D": 5,
-                "E": 7
-            },
-            "inputs description": "Input consists of a connected graph represented by its vertices - inp1 and weighted undirected edges - inp2, along with a source vertex - inp3.",
-            "expected description": "An object where each key is a vertex and its value is the shortest distance from the source vertex. Distances are shown as integers."
+            "expected": [
+                ["Home", 0],
+                ["School", 3],
+                ["Park", 2],
+                ["Mall", 5],
+                ["Library", 7]
+            ],
+            "inputs description": "Input consists of a city map represented by locations - inp1 and roads with travel distances - inp2, along with the starting location - inp3. The edges are unweighted.",
+            "expected description": "An array where each element is a sub-array containing a location and its shortest travel distance from the starting location, e.g. [location, min_distance]. The vertices should be ordered from the closest distance to the furthest distance from the starting location."
+        },
+        {
+            "problem name": "Signal Transmission Time",
+            "description": "In a network of n devices, labeled from 1 to n, you are given travel times as directed edges times[i] = (source, target, time), where source is the device sending the signal, target is the receiving device, and time is the time it takes for the signal to travel. A signal is sent from a given device k. Determine the minimum time required for all n devices to receive the signal. If it's impossible for all devices to receive the signal, return -1.",
+            "inputs": [
+                [["A", "B", 1], ["A", "C", 4], ["B", "C", 2], ["B", "D", 7], ["C", "D", 3], ["D", "E", 1]], 
+                5, 
+                1
+            ],
+            "expected": 7,
+            "inputs description": "Input consists of directed edges represented by an array of [source, target, time] - inp1, the number of devices - inp2, and the source device - inp3.",
+            "expected description": "An integer representing the minimum time for all devices to receive the signal, or -1 if it's impossible."
         }
     ]
 }
