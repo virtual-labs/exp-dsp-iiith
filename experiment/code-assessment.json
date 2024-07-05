@@ -25,7 +25,8 @@
                 ["Library", 7]
             ],
             "inputs description": "Input consists of a city map represented by locations - inp1 and roads with travel distances - inp2, along with the starting location - inp3. The edges are unweighted.",
-            "expected description": "An array where each element is a sub-array containing a location and its shortest travel distance from the starting location, e.g. [location, min_distance]. The vertices should be ordered from the closest distance to the furthest distance from the starting location."
+            "expected description": "An array where each element is a sub-array containing a location and its shortest travel distance from the starting location, e.g. [location, min_distance]. The vertices should be ordered from the closest distance to the furthest distance from the starting location.",
+            "difficulty": "beginner"
         },
         {
             "problem name": "Signal Transmission Time",
@@ -37,7 +38,8 @@
             ],
             "expected": 7,
             "inputs description": "Input consists of directed edges represented by an array of [source, target, time] - inp1, the number of devices - inp2, and the source device - inp3.",
-            "expected description": "An integer representing the minimum time for all devices to receive the signal, or -1 if it's impossible."
+            "expected description": "An integer representing the minimum time for all devices to receive the signal, or -1 if it's impossible.",
+            "difficulty": "intermediate"
         }
     ]
 }
