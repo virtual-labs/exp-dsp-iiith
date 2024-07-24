@@ -19,8 +19,8 @@
             ],
             "expected": [
                 ["Home", 0],
-                ["School", 3],
                 ["Park", 2],
+                ["School", 3],
                 ["Mall", 5],
                 ["Library", 7]
             ],
