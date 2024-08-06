@@ -33,11 +33,11 @@
             "description": "In a network of n devices, labeled from 1 to n, you are given travel times as directed edges times[i] = (source, target, time), where source is the device sending the signal, target is the receiving device, and time is the time it takes for the signal to travel. A signal is sent from a given device k. Determine the minimum time required for all n devices to receive the signal. If it's impossible for all devices to receive the signal, return -1.",
             "inputs": [
                 [["A", "B", 1], ["A", "C", 4], ["B", "C", 2], ["B", "D", 7], ["C", "D", 3], ["D", "E", 1]], 
-                5, 
-                1
+                ["A", "B", "C", "D", "E"], 
+                "A"
             ],
             "expected": 7,
-            "inputs description": "Input consists of directed edges represented by an array of [source, target, time] - inp1, the number of devices - inp2, and the source device - inp3.",
+            "inputs description": "Input consists of directed edges represented by an array of [source, target, time] - inp1, the list of all devices - inp2, and the source device - inp3.",
             "expected description": "An integer representing the minimum time for all devices to receive the signal, or -1 if it's impossible.",
             "difficulty": "intermediate"
         }
