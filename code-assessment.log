@@ -1,0 +1,13 @@
+{
+  _: [],
+  f: [
+    '/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/code-assessment.json'
+  ],
+  files: [
+    '/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/code-assessment.json'
+  ],
+  '$0': 'validate'
+}
+Json Error: must have required property 'version'
+Failed while validating /home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/code-assessment.json
+Error: Schema is Invalid
