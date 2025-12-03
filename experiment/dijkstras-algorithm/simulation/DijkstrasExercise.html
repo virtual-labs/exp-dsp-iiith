@@ -1,74 +1,133 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
     <title>Dijkstras Algorithm: Practice</title>
-<link rel="stylesheet" href="../../assets/css/common-styles-responsive.css">
-<link rel="stylesheet" href="css/dijk.css">
-    
+    <link
+      rel="stylesheet"
+      href="../../assets/css/common-styles-responsive.css"
+    />
+    <link rel="stylesheet" href="css/dijk.css" />
   </head>
   <body>
     <div class="instruction-box">
       <button class="collapsible">Instructions</button>
       <div class="content">
         <ul>
-          <li>Input value of the node in the order of traversal according to Dijkstra's Algorithm.</li>
-          <li>When you think you're done, click on submit to check your result!</li>
-          <li>Click on Undo to go back one iteration.</li>
+          <ul>
+            <li>The <b>starting node</b> for each question is shown below the graph. You do not need to enter it.</li>
+            <li>Enter the <b>next node</b> in the order Dijkstra's Algorithm would visit, using the input box and <b>Enter Next</b> button.</li>
+            <li>Continue entering nodes stepwise until all nodes are entered.</li>
+            <li>Click <b>Check</b> to validate your entered sequence against the correct answer.</li>
+            <li>Click <b>Reset</b> to clear your answer and start over.</li>
+            <li>Use the <b>Select Question</b> dropdown to switch between different example graphs.</li>
+            <li>Feedback and your current answer will be shown in the <b>Observations</b> block below the graph.</li>
+          </ul>
+            the sequence.
+          </li>
+          <li>
+            Use the dropdown to select a question. The selected question will be
+            shown in the dropdown.
+          </li>
+          <li>
+            Click 'Enter Next' to add a node to your answer. Click 'Check' to
+            validate your sequence. Use 'Reset' to start over.
+          </li>
         </ul>
       </div>
     </div>
-    
-    <div style="text-align:center;">
-      <h2 id ='head_level'>Select Question</h2>
-      <form >
-        <select name = "levels" onchange="set_level(this.value); location.reload();">
-          <option>Select Question</option>
-          <option value ="1">Question 1</option>
+    <br />
+    <div style="text-align: center; margin-bottom: 1em">
+      <form>
+        <label for="levelSelect"><b>Select Question:</b></label>
+        <select
+          id="levelSelect"
+          name="levels"
+          onchange="set_level(this.value); location.reload();"
+        >
           <option value="0">Question 2</option>
+          <option value="1">Question 1</option>
           <option value="2">Question 3</option>
           <option value="3">Question 4</option>
           <option value="4">Question 5</option>
         </select>
       </form>
-    </div> 
-    
+    </div>
+
     <script type="text/javascript" src="static/libs/dijkstra.js"></script>
     <script type="text/javascript" src="static/libs/graph.js"></script>
     <script type="text/javascript" src="static/libs/heap.js"></script>
     <center><canvas id="dijkstra" width="500" height="400"></canvas></center>
     <script type="text/javascript" src="js/dijkstras_exercise.js"></script>
-<script src="../../assets/js/instruction-box.js"></script>
+    <script src="../../assets/js/instruction-box.js"></script>
 
-    <div class="legend-comment-wrapper" style="padding-top:2%;height:26vh;">
-       <ul class="legend" style="float:left;">
-        <table>
-          <tr><td>Legend:</td></tr>
-          <tr class="SubLegend"><td><b>Node</b></td></tr>
-          <tr><td><span class="grey"></span>&ensp;Unvisited</td></tr>
-          <tr><td><span class="blue"></span>&ensp;Visited</td></tr>
-          <tr class="SubLegend"><td><b>Edge</b></td></tr>
-          <tr><td><span class="black"></span>&ensp;Traversal options</td></tr>
-          <tr><td><span class="blue"></span>&ensp;Traversed</td></tr>
-        </table>
-       </ul>
-       
-       <div class="comment-box" style="margin:auto;">
-         <b>Observations</b><br>
-         <p id='msg'></p>
-         <p id='con'></p>
-         Enter the next node
-       </div>
-       
-    </div>
-    <div id="buttondiv">
-      <div style="text-align: center;">
-        <input class="text-box"  type="text" id="input"  autofocus placeholder="Enter value of next node" maxlength="1" style="text-transform:uppercase" onkeyup=lettersonly(this)>
-        <button type="button" class="button-input" id="submit" onmouseup=ansButton() onclick="return empty()">Submit</button>
-        <button type="button" class="button-input" id="undo" onclick=undoButton()>Undo</button>
+    <div class="legend-comment-wrapper">
+      <div class="comment-box">
+        <b>Observations</b><br />
+        <span id="startNodeDisplay"></span>
+        <p id="msg"></p>
+        <p id="con"></p>
+        <span id="promptText">Enter the next node</span>
       </div>
     </div>
-    
+    <div id="buttondiv" style="text-align: center">
+      <input
+        class="text-box"
+        type="text"
+        id="input"
+        autofocus
+        placeholder="Enter value of node"
+        maxlength="1"
+        style="text-transform: uppercase"
+        onkeyup="lettersonly(this)"
+      />
+      <button
+        type="button"
+        class="button-input"
+        id="enter-next"
+        onmouseup="ansButton()"
+        onclick="return empty()"
+      >
+        Enter Next
+      </button>
+      <button
+        type="button"
+        class="button-input"
+        id="check"
+        onclick="checkAnswer()"
+      >
+        Check
+      </button>
+      <button
+        type="button"
+        class="button-input"
+        id="reset"
+        onclick="resetButton()"
+      >
+        Reset
+      </button>
+      <script>
+        // Show selected question number and starting node
+        document.addEventListener("DOMContentLoaded", function () {
+          var select = document.getElementById("levelSelect");
+          var selected = sessionStorage.getItem("level");
+          // If no selection, default to Question 2 (value 0)
+          if (!selected) {
+            selected = "0";
+            sessionStorage.setItem("level", selected);
+          }
+          if (select) {
+            select.value = selected;
+          }
+          // Display starting node for the current question
+          var startNode = window.check_arr_list
+            ? window.check_arr_list[selected][0]
+            : "A";
+          document.getElementById("startNodeDisplay").innerHTML =
+            "<b>Starting node: " + startNode + "</b><br />";
+        });
+      </script>
+    </div>
   </body>
 </html>
