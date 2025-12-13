@@ -10,7 +10,12 @@
                 "d": "None of these"
             },
             "correctAnswer": "a",
-            "explanations": {},
+            "explanations": {
+                "a": "Correct. Insertion at any point in an array requires shifting elements, resulting in O(N) time complexity in the worst case.",
+                "b": "Incorrect. O(N^2) would involve nested iterations, which is not the case for a single insertion operation.",
+                "c": "Incorrect. O(NLogN) is typical for efficient sorting algorithms, not for array insertion.",
+                "d": "Incorrect. O(N) is the correct time complexity for insertion at any point in an array."
+            },
             "difficulty": "beginner"
         },
         {
@@ -22,7 +27,12 @@
                 "d": "None of the above"
             },
             "correctAnswer": "b",
-            "explanations": {},
+            "explanations": {
+                "a": "Incorrect. O(V) would only store information for vertices but not the adjacency information needed for the algorithm.",
+                "b": "Correct. The space complexity of Dijikstra’s algorithm is O(V^2) when using an adjacency matrix to represent the graph, where V is the number of vertices.",
+                "c": "Incorrect. O(log V) is too small to represent all the data structures needed for Dijkstra's algorithm.",
+                "d": "Incorrect. O(V^2) is the correct space complexity of Dijkstra’s algorithm with adjacency matrix."
+            },
             "difficulty": "beginner"
         },
         {
@@ -35,7 +45,10 @@
             },
             "correctAnswer": "d",
             "explanations": {
-                "d": "The time complexity of Floyd Warshall is O(V^3), Bellman Ford is O(EV), Dijkstra is O(V^2)."
+                "a": "Incorrect. This ordering suggests Dijkstra's is slower than BellmanFord, which is not correct.",
+                "b": "Incorrect. This ordering suggests BellmanFord is slower than Dijkstra's, which is not correct.",
+                "c": "Incorrect. This ordering suggests Dijkstra's is slower than Floyd Warshall, which is not correct.",
+                "d": "Correct. The time complexity of Floyd Warshall is O(V^3), Bellman Ford is O(EV), Dijkstra is O(V^2)."
             },
             "difficulty": "intermediate"
         }

@@ -3,7 +3,7 @@
     "problems": [
         {
             "problem name": "City Navigation System",
-            "description": "Implement Dijkstra's algorithm to find the shortest paths in a city map. The roads are represented as unweighted edges, and the goal is to find the shortest distance from the starting location to all other locations.",
+            "description": "Implement Dijkstra's algorithm to find the shortest paths from a starting location to all other locations in a city map. Dijkstra's algorithm uses a greedy approach with a priority queue to repeatedly select the unvisited vertex with the smallest tentative distance, update distances to its neighbors, and mark it as visited. Initialize all distances to infinity except the starting location (distance 0), then iteratively explore neighbors and update their distances if a shorter path is found through the current vertex. Example: Starting from 'Home' in a graph with edges [['Home','School',4], ['Home','Park',2], ['School','Park',1], ['School','Mall',5], ['Park','Mall',3], ['Park','Library',6], ['Mall','Library',2]] should yield distances: Home=0, Park=2, School=3, Mall=5, Library=7. Only JavaScript is allowed.",
             "inputs": [
                 ["Home", "School", "Park", "Mall", "Library"],
                 [
@@ -30,7 +30,7 @@
         },
         {
             "problem name": "Signal Transmission Time",
-            "description": "In a network of n devices, labeled from 1 to n, you are given travel times as directed edges times[i] = (source, target, time), where source is the device sending the signal, target is the receiving device, and time is the time it takes for the signal to travel. A signal is sent from a given device k. Determine the minimum time required for all n devices to receive the signal. If it's impossible for all devices to receive the signal, return -1.",
+            "description": "Apply Dijkstra's algorithm to a directed network to determine the minimum time required for a signal to reach all devices from a source device. Use Dijkstra's algorithm to compute shortest paths from the source to all devices, treating transmission times as edge weights in a directed graph. After computing all shortest distances, the answer is the maximum of these distances (since all devices must receive the signal), or -1 if any device remains unreachable (infinite distance). Example: With directed edges [['A','B',1], ['A','C',4], ['B','C',2], ['B','D',7], ['C','D',3], ['D','E',1]] starting from 'A', the shortest paths are: A=0, B=1, C=3, D=6, E=7, so the minimum time for all to receive is 7. Only JavaScript is allowed.",
             "inputs": [
                 [["A", "B", 1], ["A", "C", 4], ["B", "C", 2], ["B", "D", 7], ["C", "D", 3], ["D", "E", 1]], 
                 ["A", "B", "C", "D", "E"], 
