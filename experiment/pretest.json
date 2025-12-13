@@ -11,7 +11,10 @@
             },
             "correctAnswer": "b",
             "explanations": {
-                "b": "In breadth first search we do backtracking, and go along the breadth of the tree while searching. Initially we enqueue all adjacent nodes of the root node. Nex we dequeue a node from the queue and again enqueue all of it\u2019s adjacent nodes. As we are using a queue, the next node would be an adjacent node to the initial root node as the queue is First in First Out."
+                "a": "Incorrect. Stack is used for depth first search, not breadth first search.",
+                "b": "Correct. In breadth first search we do backtracking, and go along the breadth of the tree while searching. Initially we enqueue all adjacent nodes of the root node. Next we dequeue a node from the queue and again enqueue all of it’s adjacent nodes. As we are using a queue, the next node would be an adjacent node to the initial root node as the queue is First in First Out.",
+                "c": "Incorrect. Array is not the most suitable data structure for BFS traversal as it doesn't support efficient enqueue and dequeue operations.",
+                "d": "Incorrect. Queue is the best suitable data structure for performing breadth first search."
             },
             "difficulty": "beginner"
         },
@@ -25,7 +28,10 @@
             },
             "correctAnswer": "a",
             "explanations": {
-                "b": "In depth first search, we go in the order of last in first out. Find a node, display it, push it to stack and go to the first adjacent node. Once we reach an end. We pop from stack and check to see if there is any additional adjacent node available. Hence stack is used."
+                "a": "Correct. In depth first search, we go in the order of last in first out. Find a node, display it, push it to stack and go to the first adjacent node. Once we reach an end, we pop from stack and check to see if there is any additional adjacent node available. Hence stack is used.",
+                "b": "Incorrect. Queue is used for breadth first search, not depth first search.",
+                "c": "Incorrect. Array is not the most suitable data structure for DFS traversal as it doesn't support efficient push and pop operations.",
+                "d": "Incorrect. Stack is the best suitable data structure for performing depth first search."
             },
             "difficulty": "beginner"
         },
@@ -39,10 +45,10 @@
             },
             "correctAnswer": "b",
             "explanations": {
-                "a": "Although binary search is one of the better searching algorithms, we are not sure if the tree given to us follows the requirements of binary search (i.e. tree is balanced), hence we cannot for certain conclude.",
-                "b": "Breadth first search is the best search to find the node that is closer to node, as we go searching level by level.",
-                "c": "In Depth first search we go to the last available level of every node, and then search for neighbours. Let us assume we have a tree of 7 levels. And the element we want to find is the 7th element of the first level. Imagine traversing 7 levels 7 times before finding. Hence it is not the best way.",
-                "d": "All are not equally good."
+                "a": "Incorrect. Although binary search is one of the better searching algorithms, we are not sure if the tree given to us follows the requirements of binary search (i.e. tree is balanced), hence we cannot for certain conclude.",
+                "b": "Correct. Breadth first search is the best search to find the node that is closer to node, as we go searching level by level.",
+                "c": "Incorrect. In Depth first search we go to the last available level of every node, and then search for neighbours. Let us assume we have a tree of 7 levels. And the element we want to find is the 7th element of the first level. Imagine traversing 7 levels 7 times before finding. Hence it is not the best way.",
+                "d": "Incorrect. All search methods are not equally good; breadth first search is best for finding nodes closer to the root."
             },
             "difficulty": "beginner"
         }
