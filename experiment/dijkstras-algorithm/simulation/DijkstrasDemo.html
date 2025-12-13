@@ -28,23 +28,36 @@
 <script src="../../assets/js/instruction-box.js"></script>
 
     
-    <div class="legend-comment-wrapper" style="padding-top:2%;height:22vh;">
-       <ul class="legend" style="float:left;">
+    <div class="legend-comment-wrapper">
+      <div class="legend">
         <table>
-          <tr><td>Legend:</td></tr>
-          <tr class="SubLegend"><td><b>Node</b></td></tr>
-          <tr><td><span class="grey"></span>&ensp;Unvisited</td></tr>
-          <tr><td><span class="blue"></span>&ensp;Visited</td></tr>
-          <tr class="SubLegend"><td><b>Edge</b></td></tr>
-          <tr><td><span class="black"></span>&ensp;Traversal options</td></tr>
-          <tr><td><span class="blue"></span>&ensp;Traversed</td></tr>
+          <tr>
+            <td>Legend:</td>
+          </tr>
+          <tr class="SubLegend">
+            <td><b>Node</b></td>
+          </tr>
+          <tr>
+            <td><span class="grey"></span>&ensp;Unvisited</td>
+          </tr>
+          <tr>
+            <td><span class="blue"></span>&ensp;Visited</td>
+          </tr>
+          <tr class="SubLegend">
+            <td><b>Edge</b></td>
+          </tr>
+          <tr>
+            <td><span class="black"></span>&ensp;Traversal options</td>
+          </tr>
+          <tr>
+            <td><span class="blue"></span>&ensp;Traversed</td>
+          </tr>
         </table>
-       </ul>
-       
-       <div class="comment-box" style="margin:auto;">
-        <b>Observations</b><br>
-       			<p id="ins"> Click on Start button</p>
-       </div>
+      </div>
+      <div class="comment-box">
+        <b>Observations</b><br />
+        <p id="ins">Click on Start button</p>
+      </div>
     </div>
     <div class="slidecontainer" style="text-align:center;">
       <p>
@@ -53,8 +66,7 @@
         Max. Speed
       </p>
     </div>
-    
-    <div id="buttondiv" style="text-align:center;padding-top:2%;">
+    <div id="buttondiv" style="text-align:center;">
       <button id='start' type="button" class="button-input" onclick=first_click() onmouseup="next_click()">Start</button>
       <button type="button" class="button-input" onclick="reset()">Reset</button>
       <button type="button" class="button-input" onclick="auto()">Play</button>  
