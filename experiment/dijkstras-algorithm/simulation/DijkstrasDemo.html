@@ -59,17 +59,14 @@
         <p id="ins">Click on Start button</p>
       </div>
     </div>
-    <div class="slidecontainer" style="text-align:center;">
-      <p>
-        Min. Speed
-        <input id="slider" type="range" min="1000" max="4000" step="500">
-        Max. Speed
-      </p>
+    <div id="step-indicator" style="text-align:center; font-weight:bold; margin: 10px 0; color:#1a237e;">
+      Step <span id="current-step">0</span> of <span id="total-steps">0</span>
     </div>
     <div id="buttondiv" style="text-align:center;">
-      <button id='start' type="button" class="button-input" onclick=first_click() onmouseup="next_click()">Start</button>
-      <button type="button" class="button-input" onclick="reset()">Reset</button>
-      <button type="button" class="button-input" onclick="auto()">Play</button>  
+      <button id="play-btn" type="button" class="button-input" onclick="playDemo()">Play</button>
+      <button id="pause-btn" type="button" class="button-input" onclick="pauseDemo()" disabled>Pause</button>
+      <button id="step-btn" type="button" class="button-input" onclick="stepDemo()">Step</button>
+      <button id="reset-btn" type="button" class="button-input" onclick="reset()">Reset</button>
     </div>
     
   </body>

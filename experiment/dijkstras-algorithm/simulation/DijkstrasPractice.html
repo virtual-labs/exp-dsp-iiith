@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -112,6 +112,7 @@
         <p id="msg">
           Press Start, then enter the next node visited by Dijkstra's algorithm.
         </p>
+        <div id="practice-status" style="margin-bottom: 0.5em"></div>
       </div>
     </div>
     <div id="buttondiv" style="text-align: center">
@@ -128,7 +129,11 @@
       />
       <button
         id="sta"
-        onclick="dijkstra.start(); disable(); initPractice();"
+        onclick="
+          dijkstra.start();
+          disable();
+          initPractice();
+        "
         type="button"
         class="button-input"
       >
@@ -138,14 +143,30 @@
         type="button"
         class="button-input"
         id="submit"
-        onclick="subButton();"
-        onmouseup="return empty()"
+        onclick="subButton()"
+        onmouseup="return empty();"
+        disabled
       >
         Submit
       </button>
-      <button type="button" class="button-input" onclick="reset()">
+      <button
+        type="button"
+        class="button-input"
+        onclick="reset()"
+        id="reset-btn"
+      >
         Reset
       </button>
+      <button
+        type="button"
+        class="button-input"
+        onclick="showHint()"
+        id="hint-btn"
+        disabled
+      >
+        Hint
+      </button>
+      <div id="hint-box" style="margin-top: 0.5em"></div>
     </div>
   </body>
 </html>
