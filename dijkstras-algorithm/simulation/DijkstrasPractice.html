@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <title>Dijkstras Algorithm: Exercise</title>
+    <link
+      rel="stylesheet"
+      href="../../assets/css/common-styles-responsive.css"
+    />
+    <link rel="stylesheet" href="css/dijk.css" />
+  </head>
+  <body>
+    <!-- Moved dropdown and explanation below instructions -->
+    <div class="instruction-box">
+      <button class="collapsible">Instructions</button>
+      <div class="content">
+        <ul>
+          <li>
+            <b>Start</b>: Click this button to begin the practice session. The
+            graph will be initialized and you can start entering the order in
+            which nodes are visited by Dijkstra's algorithm from the start node
+            (A).
+          </li>
+          <li>
+            <b>Submit</b>: After entering the next node in the input box, click
+            this button to submit your answer. The system will check if your
+            answer is correct and update your progress.
+          </li>
+          <li>
+            <b>Reset</b>: Click this button to restart the practice session from
+            the beginning. This will clear your progress and allow you to try
+            again.
+          </li>
+          <li>
+            <b>Hint</b>: If you are stuck, click this button to receive a hint
+            for the next node to be visited. This button is enabled after you
+            start the session.
+          </li>
+          <li>
+            Use the input box to enter the label of the next node (single
+            uppercase letter) that Dijkstra's algorithm would visit next. The
+            order is based on the shortest known distance from A, not direct
+            adjacency.
+          </li>
+        </ul>
+        <div style="color: #1a237e; font-size: 0.98em; margin-top: 0.5em">
+          <b>Note:</b> The order may include nodes that are not directly
+          connected in the graph (e.g., E → C), because Dijkstra's algorithm
+          finalizes nodes based on the shortest known distance from A, not
+          direct adjacency.
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin: 1em 0">
+      <b style="color: #1a237e; font-size: 1.1em"
+        >Practice: Enter the order in which nodes are visited by Dijkstra's
+        algorithm from the start node (A).</b
+      ><br />
+      <span style="color: #1a237e; font-size: 1em"
+        >This is NOT the path to a specific destination, but the order in which
+        Dijkstra's algorithm finalizes the shortest path to each node from
+        A.</span
+      >
+      <form class="example-select-form">
+        <label for="exampleSelect"><b>Select Example:</b></label>
+        <select
+          id="exampleSelect"
+          name="exampleSelect"
+          onchange="setExample(this.value)"
+        >
+          <option value="0">Example 1</option>
+          <option value="1">Example 2</option>
+          <option value="2">Example 3</option>
+        </select>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="static/libs/dijkstra.js"></script>
+    <script type="text/javascript" src="static/libs/graph.js"></script>
+    <script type="text/javascript" src="static/libs/heap.js"></script>
+    <center><canvas id="dijkstra" width="500" height="400"></canvas></center>
+    <script type="text/javascript" src="js/dijkstras_practice.js"></script>
+    <script
+      type="text/javascript"
+      src="static/libs/dijkstra-override.js"
+    ></script>
+    <script src="../../assets/js/instruction-box.js"></script>
+
+    <div class="legend-comment-wrapper">
+      <div class="legend">
+        <table>
+          <tr>
+            <td>Legend:</td>
+          </tr>
+          <tr class="SubLegend">
+            <td><b>Node</b></td>
+          </tr>
+          <tr>
+            <td><span class="grey"></span>&ensp;Unvisited</td>
+          </tr>
+          <tr>
+            <td><span class="blue"></span>&ensp;Visited</td>
+          </tr>
+          <tr class="SubLegend">
+            <td><b>Edge</b></td>
+          </tr>
+          <tr>
+            <td><span class="black"></span>&ensp;Traversal options</td>
+          </tr>
+          <tr>
+            <td><span class="blue"></span>&ensp;Traversed</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="comment-box">
+        <b>Observations</b><br />
+        <p id="msg">
+          Press Start, then enter the next node visited by Dijkstra's algorithm.
+        </p>
+        <div id="practice-status" style="margin-bottom: 0.5em"></div>
+      </div>
+    </div>
+    <div id="buttondiv" style="text-align: center">
+      <input
+        class="text-box"
+        type="text"
+        id="input"
+        value=""
+        autofocus
+        placeholder="Enter value of next node"
+        maxlength="1"
+        style="text-transform: uppercase"
+        onkeyup="lettersonly(this)"
+      />
+      <button
+        id="sta"
+        onclick="
+          dijkstra.start();
+          disable();
+          initPractice();
+        "
+        type="button"
+        class="button-input"
+      >
+        Start
+      </button>
+      <button
+        type="button"
+        class="button-input"
+        id="submit"
+        onclick="subButton()"
+        onmouseup="return empty();"
+        disabled
+      >
+        Submit
+      </button>
+      <button
+        type="button"
+        class="button-input"
+        onclick="reset()"
+        id="reset-btn"
+      >
+        Reset
+      </button>
+      <button
+        type="button"
+        class="button-input"
+        onclick="showHint()"
+        id="hint-btn"
+        disabled
+      >
+        Hint
+      </button>
+      <div id="hint-box" style="margin-top: 0.5em"></div>
+    </div>
+  <script src="../../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

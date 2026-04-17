@@ -1,0 +1,73 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. Dijkstra\u2019s algorithm cannot be applied on ____.",
+            "answers": {
+                "a": "Directed and weighted graphs",
+                "b": "Container of objects of similar types",
+                "c": "Container of objects of mixed types",
+                "d": "All of the mentioned"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "Incorrect. Dijkstra's algorithm can be applied on directed and weighted graphs with non-negative weights.",
+                "b": "Incorrect. This option doesn't make sense in the context of graph algorithms.",
+                "c": "Incorrect. This option doesn't make sense in the context of graph algorithms.",
+                "d": "Correct. Dijkstra\u2019s algorithm cannot be applied on graphs with negative weights, as it may produce incorrect results."
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "2. Dijkstra\u2019s Algorithm is the prime example for ________.",
+            "answers": {
+                "a": "Greedy algorithm",
+                "b": "Branch and bound",
+                "c": "Back tracking",
+                "d": "Dynamic programming"
+            },
+            "correctAnswer": "a",
+            "explanations": {
+                "a": "Correct. Dijkstra’s Algorithm is a prime example of greedy algorithm as it always selects the vertex with minimum distance at each step.",
+                "b": "Incorrect. Branch and bound is a different algorithmic paradigm used for optimization problems.",
+                "c": "Incorrect. Backtracking explores all possible solutions by trying partial solutions, which is not how Dijkstra's works.",
+                "d": "Incorrect. Dynamic programming solves problems by breaking them into overlapping subproblems, which is not the approach of Dijkstra's."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "3. Given a directed graph where the weight of every edge is the same, we can efficiently find the shortest path from a given source to destination using _______.",
+            "answers": {
+                "a": "Dijkstra\u2019s Shortest Path Algorithm",
+                "b": "Neither Breadth First Traversal nor Dijkstra\u2019s algorithm can be used",
+                "c": "Depth First Search",
+                "d": "Breadth First Traversal"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "Incorrect. While Dijkstra's can be used, BFS is more efficient when all edges have the same weight.",
+                "b": "Incorrect. Breadth First Traversal can efficiently find shortest paths when all edges have equal weight.",
+                "c": "Incorrect. Depth First Search does not guarantee shortest paths.",
+                "d": "Correct. When all edges have the same weight, Breadth First Traversal is the most efficient method to find shortest paths as it explores nodes level by level."
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "4. Which of the following algorithms can be used to efficiently calculate single source shortest paths in a Directed Acyclic Graph?",
+            "answers": {
+                "a": "Dijkstra",
+                "b": "Bellman-Ford",
+                "c": "Topological Sort",
+                "d": "Strongly Connected Component"
+            },
+            "correctAnswer": "c",
+            "explanations": {
+                "a": "Incorrect. While Dijkstra can be used on DAGs, topological sort provides a more efficient linear time solution.",
+                "b": "Incorrect. Bellman-Ford can handle negative weights but is not the most efficient for DAGs.",
+                "c": "Correct. Topological Sort can be used to efficiently calculate single source shortest paths in a Directed Acyclic Graph in O(V+E) time.",
+                "d": "Incorrect. Strongly Connected Component algorithm is used to find components, not shortest paths."
+            },
+            "difficulty": "intermediate"
+        }
+    ]
+}

@@ -1,0 +1,164 @@
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/js/dijkstras_demo.js
+   34:20  warning  'Dijkstra' is not defined              no-undef
+   38:3   warning  'count' is not defined                 no-undef
+   39:3   warning  'interval_count' is not defined        no-undef
+   42:54  warning  'comments_list' is not defined         no-undef
+   57:1   warning  'comments_list' is not defined         no-undef
+   79:15  warning  'comments_list' is not defined         no-undef
+   80:17  warning  'count' is not defined                 no-undef
+   89:3   warning  'count' is not defined                 no-undef
+   89:11  warning  'count' is not defined                 no-undef
+   92:7   warning  'count' is not defined                 no-undef
+   92:17  warning  'comments_list' is not defined         no-undef
+  103:7   warning  'count' is not defined                 no-undef
+  103:16  warning  'comments_list' is not defined         no-undef
+  106:20  warning  'comments_list' is not defined         no-undef
+  106:34  warning  'count' is not defined                 no-undef
+  110:10  warning  'playDemo' is defined but never used   no-unused-vars
+  120:9   warning  'count' is not defined                 no-undef
+  120:18  warning  'comments_list' is not defined         no-undef
+  127:10  warning  'pauseDemo' is defined but never used  no-unused-vars
+  135:10  warning  'stepDemo' is defined but never used   no-unused-vars
+  140:7   warning  'count' is not defined                 no-undef
+  140:16  warning  'comments_list' is not defined         no-undef
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/js/dijkstras_exercise.js
+  158:5   warning  'set_level' is assigned a value but never used  no-unused-vars
+  176:5   warning  'dijkstra' is assigned a value but never used   no-unused-vars
+  176:20  warning  'Dijkstra' is not defined                       no-undef
+  177:10  warning  'lettersonly' is defined but never used         no-unused-vars
+  181:10  warning  'empty' is defined but never used               no-unused-vars
+  190:5   warning  'ansButton' is assigned a value but never used  no-unused-vars
+  234:10  warning  'checkAnswer' is defined but never used         no-unused-vars
+  249:10  warning  'resetButton' is defined but never used         no-unused-vars
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/js/dijkstras_practice.js
+  110:25  warning  'Dijkstra' is not defined                          no-undef
+  114:10  warning  'lettersonly' is defined but never used            no-unused-vars
+  118:10  warning  'empty' is defined but never used                  no-unused-vars
+  135:10  warning  'reset' is defined but never used                  no-unused-vars
+  156:10  warning  'showHint' is defined but never used               no-unused-vars
+  223:10  warning  'disable' is defined but never used                no-unused-vars
+  252:10  warning  'updatePracticeComment' is defined but never used  no-unused-vars
+  262:10  warning  'initPractice' is defined but never used           no-unused-vars
+  272:5   warning  'subButton' is assigned a value but never used     no-unused-vars
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/js/realization.js
+   1:5  warning  'realizationCatalog' is assigned a value but never used  no-unused-vars
+  41:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  42:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  46:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  47:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  51:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  52:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  56:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+  57:1  warning  Mixed spaces and tabs                                    no-mixed-spaces-and-tabs
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/static/libs/dijkstra-override.js
+  28:11  warning  'w1' is assigned a value but never used  no-unused-vars
+  49:3   warning  'Edge' is not defined                    no-undef
+  50:17  warning  'Nodes' is not defined                   no-undef
+  51:17  warning  'Nodes' is not defined                   no-undef
+  54:23  warning  'Nodes' is not defined                   no-undef
+  62:10  warning  'isDigraph' is not defined               no-undef
+  62:37  warning  'Nodes' is not defined                   no-undef
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/static/libs/dijkstra.js
+   12:10  warning  'Dijkstra' is defined but never used     no-unused-vars
+   16:3   warning  'Graph' is not defined                   no-undef
+   75:13  warning  's' is already defined                   no-redeclare
+   77:11  warning  'w1' is assigned a value but never used  no-unused-vars
+  112:16  warning  'Nodes' is not defined                   no-undef
+  113:20  warning  'Nodes' is not defined                   no-undef
+  113:50  warning  'Edges' is not defined                   no-undef
+  114:17  warning  'Edges' is not defined                   no-undef
+  115:19  warning  'Nodes' is not defined                   no-undef
+  124:16  warning  'j' is already defined                   no-redeclare
+  124:20  warning  'Nodes' is not defined                   no-undef
+  124:50  warning  'Edges' is not defined                   no-undef
+  125:13  warning  'v' is already defined                   no-redeclare
+  125:17  warning  'Edges' is not defined                   no-undef
+  126:13  warning  'pos' is already defined                 no-redeclare
+  126:19  warning  'Nodes' is not defined                   no-undef
+  127:13  warning  'x2' is already defined                  no-redeclare
+  128:13  warning  'y2' is already defined                  no-redeclare
+  147:3   warning  'Edge' is not defined                    no-undef
+  149:17  warning  'Nodes' is not defined                   no-undef
+  150:17  warning  'Nodes' is not defined                   no-undef
+  154:23  warning  'Nodes' is not defined                   no-undef
+  162:10  warning  'isDigraph' is not defined               no-undef
+  162:37  warning  'Nodes' is not defined                   no-undef
+  191:14  warning  'Nodes' is not defined                   no-undef
+  192:14  warning  'Nodes' is not defined                   no-undef
+  198:25  warning  'n' is not defined                       no-undef
+  199:7   warning  'Nodes' is not defined                   no-undef
+  200:7   warning  'Nodes' is not defined                   no-undef
+  201:7   warning  'Nodes' is not defined                   no-undef
+  204:5   warning  'Nodes' is not defined                   no-undef
+  205:5   warning  'Nodes' is not defined                   no-undef
+  212:14  warning  'Nodes' is not defined                   no-undef
+  214:9   warning  'Nodes' is not defined                   no-undef
+  217:11  warning  'Nodes' is not defined                   no-undef
+  220:5   warning  'Nodes' is not defined                   no-undef
+  224:14  warning  'Edges' is not defined                   no-undef
+  227:14  warning  'Edges' is not defined                   no-undef
+  230:14  warning  'Edges' is not defined                   no-undef
+  233:14  warning  'Edges' is not defined                   no-undef
+  239:17  warning  'Nodes' is not defined                   no-undef
+  240:17  warning  'Nodes' is not defined                   no-undef
+  241:17  warning  'Edges' is not defined                   no-undef
+  247:11  warning  'Nodes' is not defined                   no-undef
+  248:11  warning  'Nodes' is not defined                   no-undef
+  252:13  warning  'Nodes' is not defined                   no-undef
+  266:5   warning  'Nodes' is not defined                   no-undef
+  271:5   warning  'Nodes' is not defined                   no-undef
+  280:29  warning  'n' is not defined                       no-undef
+  307:25  warning  'n' is not defined                       no-undef
+  308:7   warning  'Nodes' is not defined                   no-undef
+  308:31  warning  'Nodes' is not defined                   no-undef
+  310:14  warning  'i' is already defined                   no-redeclare
+  310:25  warning  'm' is not defined                       no-undef
+  311:7   warning  'Edges' is not defined                   no-undef
+  311:31  warning  'Edges' is not defined                   no-undef
+  317:23  warning  'n' is not defined                       no-undef
+  318:13  warning  'Nodes' is not defined                   no-undef
+  319:5   warning  'Nodes' is not defined                   no-undef
+  321:12  warning  'i' is already defined                   no-redeclare
+  321:23  warning  'm' is not defined                       no-undef
+  323:13  warning  'Edges' is not defined                   no-undef
+  331:14  warning  'Heap' is not defined                    no-undef
+  331:19  warning  'n' is not defined                       no-undef
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/dijkstras-algorithm/simulation/static/libs/graph.js
+    6:10  warning  'Graph' is defined but never used  no-unused-vars
+   13:32  warning  'n' is not defined                 no-undef
+   14:32  warning  'm' is not defined                 no-undef
+   17:25  warning  'n' is not defined                 no-undef
+   18:13  warning  'Nodes' is not defined             no-undef
+   19:13  warning  'Nodes' is not defined             no-undef
+   21:18  warning  'i' is already defined             no-redeclare
+   21:25  warning  'm' is not defined                 no-undef
+   22:13  warning  'Edges' is not defined             no-undef
+   56:9   warning  'Edges' is not defined             no-undef
+   63:9   warning  'Edges' is not defined             no-undef
+   99:5   warning  'drawNode' is not defined          no-undef
+  120:5   warning  'Nodes' is not defined             no-undef
+  121:5   warning  'Nodes' is not defined             no-undef
+  128:25  warning  'n' is not defined                 no-undef
+  129:17  warning  'Nodes' is not defined             no-undef
+  151:18  warning  'Nodes' is not defined             no-undef
+  152:18  warning  'Nodes' is not defined             no-undef
+  153:18  warning  'Nodes' is not defined             no-undef
+  154:18  warning  'Nodes' is not defined             no-undef
+  172:9   warning  'isDigraph' is not defined         no-undef
+  186:44  warning  'drawEdge' is not defined          no-undef
+
+/home/runner/work/exp-dsp-iiith/exp-dsp-iiith/experiment/posttest.js
+  18:6   warning  'letter' is not defined  no-undef
+  22:63  warning  'letter' is not defined  no-undef
+  23:3   warning  'letter' is not defined  no-undef
+  24:27  warning  'letter' is not defined  no-undef
+
+✖ 145 problems (0 errors, 145 warnings)
+

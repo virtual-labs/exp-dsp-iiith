@@ -1,0 +1,69 @@
+{
+    "version": 2.0,
+    "questions": [
+        {
+            "question": "1. What is the time complexity of Dijikstra\u2019s algorithm? (V is the number of vertices in the graph)",
+            "answers": {
+                "a": "O(V)",
+                "b": "O(V^2)",
+                "c": "O(log V)",
+                "d": "None of the above"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Incorrect. O(V) would only account for visiting vertices once without considering the edge processing required.",
+                "b": "Correct. The time complexity of Dijkstra\u2019s algorithm is O(V^2) when using an adjacency matrix representation, where V is the number of vertices.",
+                "c": "Incorrect. O(log V) is too efficient and doesn't account for the nested iterations required in Dijkstra's algorithm.",
+                "d": "Incorrect. O(V^2) is the correct time complexity of Dijkstra\u2019s algorithm."
+            },
+            "difficulty": "beginner"
+        },
+        {
+            "question": "2. Which of the following data structure can help decrease the time complexity of Dijikstra\u2019s algorithm?",
+            "answers": {
+                "a": "Stack",
+                "b": "Queue",
+                "c": "Heap",
+                "d": "Min Priority Queue"
+            },
+            "correctAnswer": "d",
+            "explanations": {
+                "a": "Incorrect. Stack follows LIFO principle and is not suitable for implementing the priority queue needed in Dijkstra's algorithm.",
+                "b": "Incorrect. Regular queue follows FIFO principle and doesn't provide the minimum value extraction needed for Dijkstra's algorithm.",
+                "c": "Incorrect. While heap can improve performance, min priority queue is more specific and optimal for Dijkstra's algorithm.",
+                "d": "Correct. Due to the way the min priority queue is defined, functions like getMinimumValue() and decreaseKey() help us reduce the time complexity of the algorithm to O ( V + E l o g V ) from O(V^2)."
+            },
+            "difficulty": "advanced"
+        },
+        {
+            "question": "3. Dijkstra\u2019s Algorithm can also be used on graphs with negative weights.",
+            "answers": {
+                "a": "True",
+                "b": "False"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Incorrect. Dijkstra's algorithm assumes non-negative edge weights and will produce incorrect results with negative weights.",
+                "b": "Correct. Dijkstra\u2019s Algorithm cannot be used on graphs with negative weights as it may produce incorrect results. For graphs with negative weights, the Bellman-Ford algorithm should be used instead."
+            },
+            "difficulty": "intermediate"
+        },
+        {
+            "question": "4. Dijkstra\u2019s Algorithm is used to find:",
+            "answers": {
+                "a": "Cycles in graph",
+                "b": "Single source shortest path",
+                "c": "Network flow",
+                "d": "Sorted order of nodes"
+            },
+            "correctAnswer": "b",
+            "explanations": {
+                "a": "Incorrect. Dijkstra's algorithm is not designed to find cycles in a graph.",
+                "b": "Correct. Dijkstra\u2019s Algorithm is used to find the single source shortest path from a given source vertex to all other vertices in the graph.",
+                "c": "Incorrect. Network flow problems are solved using algorithms like Ford-Fulkerson, not Dijkstra's.",
+                "d": "Incorrect. Dijkstra's algorithm doesn't sort nodes; it finds shortest paths."
+            },
+            "difficulty": "beginner"
+        }
+    ]
+}
