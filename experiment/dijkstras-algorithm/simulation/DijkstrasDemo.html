@@ -13,9 +13,11 @@
       <button class="collapsible">Instructions</button>
       <div class="content">
         <ul>
-          <li> Click on the <b>Next</b> button below to find the shortest path from A to the node.
-          <li> The traversal will be done according to Dijkstra's Algorithm
-          <li> Click on the <b>Reset</b> button to start again.
+          <li>Click on the <b>Play</b> button to automatically run through all the steps of Dijkstra's Algorithm, visualizing the shortest path calculation from node A to all other nodes. The steps will advance every 2 seconds.</li>
+          <li>Click on the <b>Pause</b> button to pause the automatic traversal at the current step. You can resume by clicking <b>Play</b> again.</li>
+          <li>Click on the <b>Step</b> button to manually advance the simulation one step at a time. This allows you to observe each stage of the algorithm in detail.</li>
+          <li>Click on the <b>Reset</b> button to restart the simulation from the beginning. This will clear all progress and allow you to start over.</li>
+          <li>The traversal and shortest path calculation are performed according to Dijkstra's Algorithm. Follow the step-by-step comments and observe the changes in the graph and node distances.</li>
         </ul>
       </div>
     </div>
@@ -59,17 +61,14 @@
         <p id="ins">Click on Start button</p>
       </div>
     </div>
-    <div class="slidecontainer" style="text-align:center;">
-      <p>
-        Min. Speed
-        <input id="slider" type="range" min="1000" max="4000" step="500">
-        Max. Speed
-      </p>
+    <div id="step-indicator" style="text-align:center; font-weight:bold; margin: 10px 0; color:#1a237e;">
+      Step <span id="current-step">0</span> of <span id="total-steps">0</span>
     </div>
     <div id="buttondiv" style="text-align:center;">
-      <button id='start' type="button" class="button-input" onclick=first_click() onmouseup="next_click()">Start</button>
-      <button type="button" class="button-input" onclick="reset()">Reset</button>
-      <button type="button" class="button-input" onclick="auto()">Play</button>  
+      <button id="play-btn" type="button" class="button-input" onclick="playDemo()">Play</button>
+      <button id="pause-btn" type="button" class="button-input" onclick="pauseDemo()" disabled>Pause</button>
+      <button id="step-btn" type="button" class="button-input" onclick="stepDemo()">Step</button>
+      <button id="reset-btn" type="button" class="button-input" onclick="reset()">Reset</button>
     </div>
     
   </body>

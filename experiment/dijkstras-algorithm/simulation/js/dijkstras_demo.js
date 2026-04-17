@@ -1,6 +1,7 @@
 var myfont = "18px 'Courier'";
 var isdigraph = false;
-var interval;
+var interval = null;
+var playing = false;
 var nodes = [
   ["A", 440, 140],
   ["B", 360, 40],
@@ -32,16 +33,27 @@ var edges = [
 var canvas = document.getElementById("dijkstra");
 var dijkstra = new Dijkstra(canvas, myfont, isdigraph, nodes, edges, false);
 function reset() {
-  location.reload();
+  if (interval) clearInterval(interval);
+  playing = false;
+  count = -1;
+  interval_count = 0;
+  document.getElementById("ins").innerText = "Click on Play or Step to start";
+  document.getElementById("current-step").innerText = "0";
+  document.getElementById("total-steps").innerText = comments_list.length - 1;
+  document.getElementById("play-btn").disabled = false;
+  document.getElementById("pause-btn").disabled = true;
+  document.getElementById("step-btn").disabled = false;
+  setTimeout(function () {
+    document.getElementById("step-btn").disabled = false;
+  }, 100);
+  // Visually reset the graph
+  if (typeof dijkstra.reset === "function") {
+    dijkstra.reset();
+  } else if (typeof dijkstra.draw === "function") {
+    dijkstra.draw();
+  }
 }
-function first_click() {
-  x = document.getElementById("start");
-  x.innerText = "Next";
-  interval = setInterval(function () {
-    dijkstra.start();
-    next_click();
-  }, 2000);
-}
+// Remove first_click, replaced by playDemo/stepDemo
 comments_list = [
   "Starting node A is selected",
   "Nodes directly connected to A are B ,D ,C",
@@ -62,30 +74,75 @@ comments_list = [
   "I is selected",
   "End",
 ];
-let count = -1;
-function next_click() {
-  if (count === 16) {
-    document.getElementById("start").disabled = true;
-    if (interval) {
-      clearInterval(interval);
-    }
-  }
-  count = count + 1;
-  e_id = document.getElementById("ins");
-  e_id.innerText = comments_list[count];
+
+function updateStepIndicator() {
+  var total = comments_list.length - 1;
+  var current = count;
+  // Clamp current to [0, total]
+  if (current < 0) current = 0;
+  if (current > total) current = total;
+  document.getElementById("current-step").innerText = current + 1;
+  document.getElementById("total-steps").innerText = total + 1;
 }
-let interval_count = 0;
-function temp() {
+
+function next_click() {
+  count = count + 1;
+  var e_id = document.getElementById("ins");
+  // If this is the last step ("End"), show the completion message and disable buttons
+  if (count === comments_list.length - 1) {
+    e_id.innerText = "The traversal is complete. All the nodes are traversed.";
+    if (interval) clearInterval(interval);
+    playing = false;
+    document.getElementById("play-btn").disabled = true;
+    document.getElementById("pause-btn").disabled = true;
+    document.getElementById("step-btn").disabled = true;
+    updateStepIndicator();
+    return;
+  }
+  // If we somehow go past the last step, do nothing
+  if (count >= comments_list.length) {
+    return;
+  }
+  e_id.innerText = comments_list[count];
+  updateStepIndicator();
+}
+
+function playDemo() {
+  if (playing) return;
+  playing = true;
+  document.getElementById("play-btn").disabled = true;
+  document.getElementById("pause-btn").disabled = false;
+  document.getElementById("step-btn").disabled = true;
+  interval = setInterval(function () {
+    dijkstra.start();
+    next_click();
+    // If we just finished the last step, stop auto mode
+    if (count >= comments_list.length - 1) {
+      if (interval) clearInterval(interval);
+      playing = false;
+    }
+  }, 2000);
+}
+
+function pauseDemo() {
+  if (interval) clearInterval(interval);
+  playing = false;
+  document.getElementById("play-btn").disabled = false;
+  document.getElementById("pause-btn").disabled = true;
+  document.getElementById("step-btn").disabled = false;
+}
+
+function stepDemo() {
+  if (playing) return;
   dijkstra.start();
   next_click();
-  interval_count += 1;
-  if (interval_count === 17) {
-    clearInterval(inter);
+  // Disable step button if we just finished
+  if (count >= comments_list.length - 1) {
+    document.getElementById("step-btn").disabled = true;
   }
 }
-var inter;
-function auto() {
-  let x = document.getElementById("slider");
-  let val = x.value;
-  inter = setInterval(temp, val);
-}
+
+// Initialize on load
+window.onload = function () {
+  reset();
+};

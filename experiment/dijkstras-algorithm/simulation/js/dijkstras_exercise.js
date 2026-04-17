@@ -137,24 +137,40 @@ var ques_edges = [edges, edges2, edges3, edges4, edges5];
 
 // Sample correct answers for each question (node order as per Dijkstra's algorithm)
 var check_arr_list = [
-  // Question 2 (index 0) - updated to include all nodes in the graph: A, B, C, D, E, F, G, H, I
-  ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+  // Question 2 (index 0) - corrected to only include nodes in the graph: A, B, C, D, E, F, G
+  ["A", "D", "B", "E", "C", "F", "H", "G", "I"],
   // Question 1 (index 1)
-  ["A", "D", "B", "E", "F", "C", "G", "H", "I"],
+  ["A", "D", "B", "E", "C", "F", "G"],
   // Question 3 (index 2)
-  ["A", "D", "B", "E", "F", "C", "G", "H", "I", "J", "K"],
+  ["A", "D", "B", "E", "C", "F", "K", "H", "G", "I", "J"],
   // Question 4 (index 3)
-  ["A", "D", "B", "E", "F", "C", "G", "H"],
+  ["A", "D", "B", "E", "C", "F", "H", "G"],
   // Question 5 (index 4)
-  ["A", "D", "B", "E", "F", "C", "H"],
+  ["A", "D", "B", "E", "C", "F", "H"],
 ];
-let level = 1;
-level = Number(sessionStorage.getItem("level"));
+let level = 0;
+if (sessionStorage.getItem("level") !== null) {
+  level = Number(sessionStorage.getItem("level"));
+}
 var nodq = ques_nodes[level];
 var edq = ques_edges[level];
 
 var set_level = function (value) {
   sessionStorage.setItem("level", value);
+  level = Number(value); // Update global level variable
+  emp = [];
+  let p = document.getElementById("msg");
+  let startNode = check_arr_list[level][0];
+  p.innerText = "Your answer : " + startNode;
+  let z = document.getElementById("con");
+  z.innerText = "";
+  let promptText = document.getElementById("promptText");
+  promptText.innerText = "Enter the next node";
+  let inputBox = document.getElementById("input");
+  if (inputBox) {
+    inputBox.value = "";
+    inputBox.focus();
+  }
 };
 var canvas = document.getElementById("dijkstra");
 var dijkstra = new Dijkstra(canvas, myfont, isdigraph, nodq, edq, false);
@@ -175,7 +191,21 @@ let ansButton = function () {
   let input = document.getElementById("input");
   let promptText = document.getElementById("promptText");
   let val = input.value.toUpperCase();
-  input.value = val;
+  if (val === "") {
+    alert("Invalid Entry");
+    return;
+  }
+  input.value = "";
+  const startNode = check_arr_list[level][0];
+  // Prevent entering the starting node
+  if (val === startNode) {
+    alert(
+      "Do not enter the starting node. Begin with the next node after " +
+        startNode +
+        ".",
+    );
+    return;
+  }
   // Only allow valid nodes for this question, except the starting node
   const validNodes = check_arr_list[level].slice(1); // skip starting node
   if (!validNodes.includes(val)) {
@@ -187,18 +217,12 @@ let ansButton = function () {
     promptText.innerText = "All nodes entered. Click Check.";
     return;
   }
-  if (emp.length > 0) {
-    if (emp[emp.length - 1] !== val) {
-      emp.push(val);
-    } else {
-      alert("Repeated Input");
-      return;
-    }
-  } else {
-    emp.push(val);
+  if (emp.includes(val)) {
+    alert("Repeated Input");
+    return;
   }
+  emp.push(val);
   let p = document.getElementById("msg");
-  let startNode = check_arr_list[level][0];
   p.innerText = "Your answer : " + [startNode].concat(emp).join(", ");
   // Update prompt for next node
   promptText.innerText =
@@ -211,7 +235,8 @@ function checkAnswer() {
   var check_list = check_arr_list[level];
   let z = document.getElementById("con");
   if (emp.length !== check_list.length - 1) {
-    z.innerText = "Please enter all nodes before checking.";
+    let left = check_list.length - 1 - emp.length;
+    z.innerText = `Please enter all nodes before checking. ${left} node(s) left.`;
     return;
   }
   // Compare user input (emp) to correct answer (excluding starting node)
@@ -225,10 +250,13 @@ function resetButton() {
   emp = [];
   let p = document.getElementById("msg");
   let startNode = check_arr_list[level][0];
+  // Only show the starting node, emp is empty
   p.innerText = "Your answer : " + startNode;
   let z = document.getElementById("con");
   z.innerText = "";
   let promptText = document.getElementById("promptText");
   promptText.innerText = "Enter the next node";
-  document.getElementById("input").value = "";
+  let inputBox = document.getElementById("input");
+  inputBox.value = "";
+  inputBox.focus();
 }
