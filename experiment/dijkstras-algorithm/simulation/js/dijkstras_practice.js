@@ -124,9 +124,57 @@ function empty() {
   }
 }
 
+function setButtonState(btnId, enabled) {
+  var btn = document.getElementById(btnId);
+  if (!btn) return;
+  btn.disabled = !enabled;
+  btn.style.backgroundColor = enabled ? "#1976d2" : "#bdbdbd";
+  btn.style.cursor = enabled ? "pointer" : "not-allowed";
+}
+
 function reset() {
   location.reload();
+  setButtonState("submit", false);
+  setButtonState("hint-btn", false);
 }
+
+function showPracticeStatus() {
+  // Show finalized nodes and next expected node
+  let statusDiv = document.getElementById("practice-status");
+  if (!current_check_list) {
+    statusDiv.innerHTML = "";
+    return;
+  }
+  let visited = getVisitedList();
+  //let nextNode = current_check_list[practice_step] || "-";
+  statusDiv.innerHTML = "<b>Visited:</b> " + (visited ? visited : "-");
+  /* +
+    " &nbsp; <b>Next:</b> " +
+    nextNode; */
+}
+
+function showHint() {
+  if (!current_check_list) return;
+  let nextNode = current_check_list[practice_step];
+  let hintBox = document.getElementById("hint-box");
+  if (practice_step >= current_check_list.length) {
+    hintBox.innerHTML =
+      '<span style="color:#1976d2"><b>Hint:</b> All nodes are finalized. No next node.</span>';
+  } else {
+    hintBox.innerHTML =
+      '<span style="color:#1976d2"><b>Hint:</b> The next node is <b>' +
+      nextNode +
+      "</b></span>";
+  }
+  setTimeout(function () {
+    hintBox.innerHTML = "";
+  }, 3000);
+}
+
+window.onload = function () {
+  setButtonState("submit", false);
+  setButtonState("hint-btn", false);
+};
 
 // Update the graph in-place when a new example is selected
 window.setExample = function (val) {
@@ -171,6 +219,7 @@ window.setExample = function (val) {
     location.reload();
   }
 };
+
 function disable() {
   var element = document.getElementById("sta");
   element.parentNode.removeChild(element);
@@ -194,6 +243,12 @@ let practice_comments_list = [
   "Final steps!",
 ];
 
+function getVisitedList() {
+  if (!current_check_list) return "A";
+  if (practice_step === 0) return "A";
+  return "A, " + current_check_list.slice(0, practice_step).join(", ");
+}
+
 function updatePracticeComment() {
   let p = document.getElementById("msg");
   if (practice_step < practice_comments_list.length) {
@@ -209,38 +264,52 @@ function initPractice() {
   practice_step = 0;
   let p = document.getElementById("msg");
   p.innerText = "Enter the next node visited by Dijkstra's algorithm.";
+  showPracticeStatus();
+  setButtonState("submit", true);
+  setButtonState("hint-btn", true);
 }
 
 var subButton = function () {
-  if (!current_check_list) {
-    // If not initialized, initialize now (fallback)
-    current_check_list = check_arr_list[rndm].slice();
-    practice_step = 0;
+  if (!current_check_list) return;
+  let input = document.getElementById("input").value.trim().toUpperCase();
+  let msg = document.getElementById("msg");
+  let finalized = current_check_list.slice(0, practice_step);
+  let nextNode = current_check_list[practice_step];
+  if (!input) {
+    msg.innerHTML = '<span style="color:#d32f2f">Please enter a node.</span>';
+    return;
   }
-  let input = document.getElementById("input");
-  let p = document.getElementById("msg");
-  if (input.value === current_check_list[0]) {
-    current_check_list.splice(0, 1);
-    dijkstra.start();
+  if (input === nextNode) {
     practice_step++;
-    if (current_check_list.length === 0) {
-      // Show the correct path
-      let correctPath = ["A"].concat(check_arr_list[rndm]).join(" → ");
-      p.innerHTML =
-        "<b>Congratulations!</b> You have completed the practice.<br>" +
-        "<b>Correct Path:</b> " +
-        correctPath;
-      // Disable input and submit button
-      document.getElementById("input").disabled = true;
-      document.getElementById("submit").disabled = true;
-    } else {
-      updatePracticeComment();
+    msg.innerHTML =
+      '<span style="color:#388e3c">Correct! Node ' +
+      input +
+      " finalized.</span>";
+    showPracticeStatus();
+    document.getElementById("input").value = "";
+    if (practice_step === current_check_list.length) {
+      msg.innerHTML =
+        '<span style="color:#388e3c">Congratulations! All nodes are finalized in correct order.</span>';
+      showPracticeStatus();
+      setButtonState("submit", false);
+      setButtonState("hint-btn", false);
     }
-    input.value = "";
-    return true;
-  } else {
-    p.innerText =
-      "Wrong Answer!  Check the values on top of the nodes and try again ";
-    return false;
+    return;
   }
+  // Out-of-order but present in list
+  if (current_check_list.includes(input)) {
+    if (finalized.includes(input)) {
+      msg.innerHTML =
+        '<span style="color:#d32f2f">Node ' +
+        input +
+        " is already finalized. Enter the next node.</span>";
+    } else {
+      msg.innerHTML =
+        '<span style="color:#fbc02d">That node is reachable, but not the next shortest. Try again!</span>';
+    }
+    return;
+  }
+  // Not in list at all
+  msg.innerHTML =
+    '<span style="color:#d32f2f">That node is not reachable yet or is invalid.</span>';
 };
